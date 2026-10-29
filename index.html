@@ -105,7 +105,7 @@ textarea{resize:none;height:170px;line-height:1.6}
 .cform{display:flex;flex-direction:column;gap:8px}
 #cname{font-size:15px;padding:8px 10px}
 #ctext{height:64px;font-size:16px}
-#csend{align-self:flex-end;font-size:15px}
+.crow{display:flex;justify-content:space-between;align-items:center;gap:10px}
 #mnote{margin-top:14px;color:#8d9488;font-size:14px}
 #mnote:not([hidden]){display:block}
 #card #ename{font-size:24px;margin-bottom:12px}
@@ -162,14 +162,14 @@ textarea{resize:none;height:170px;line-height:1.6}
  <div class="big"><img id="mimg" alt=""></div>
  <div class="info"><h3 id="mname"></h3><p id="mdeeds"></p>
   <input type="text" id="ename" maxlength="20" hidden><textarea id="edeeds" maxlength="200" hidden></textarea><input type="file" id="efile" accept="image/*" hidden>
-  <div class="acts"><button class="btn" id="medit">編輯</button><button class="btn" id="mpic" hidden>更換照片</button><button class="btn" id="mpicdel" hidden>刪除照片</button><button class="btn" id="msave" hidden>儲存</button><button class="btn" id="mcancel" hidden>取消</button><button class="btn" id="mdel">刪除</button><button class="btn" id="mclose">關閉</button></div>
+  <div class="acts"><button class="btn" id="medit">編輯</button><button class="btn" id="mpic" hidden>更換照片</button><button class="btn" id="mpicdel" hidden>刪除照片</button><button class="btn" id="msave" hidden>儲存</button><button class="btn" id="mcancel" hidden>取消</button><button class="btn" id="mdel">刪除</button></div>
   <div id="cm">
    <h4 id="chead">留言</h4>
    <div id="clist"></div>
    <div class="cform">
     <input type="text" id="cname" maxlength="12" placeholder="暱稱（選填）">
     <textarea id="ctext" maxlength="100" placeholder="寫下你的留言…（最多 100 字）"></textarea>
-    <button type="button" class="btn" id="csend">送出留言</button>
+    <div class="crow"><button type="button" class="btn" id="csend">送出留言</button><button type="button" class="btn" id="mclose">關閉</button></div>
    </div>
   </div></div>
 </div></div>
