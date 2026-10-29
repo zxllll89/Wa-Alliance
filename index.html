@@ -53,12 +53,9 @@ h1 .sub{line-height:1;padding-bottom:6px;font-size:clamp(20px,1.8vw,34px);letter
 .frame{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .frame img{-webkit-user-drag:none;pointer-events:none}
 #wall.dragging{-webkit-user-select:none;user-select:none}
-@keyframes wig{0%{rotate:-1.4deg}50%{rotate:1.4deg}100%{rotate:-1.4deg}}
-.dragging .frame:not(.ph):not(.ghost){animation:wig .3s ease-in-out infinite !important}
-.dragging .frame:nth-child(even):not(.ph):not(.ghost){animation-duration:.35s !important;animation-delay:-.12s !important}
 .dragging .frame:hover{transform:none}
 .frame.ph{opacity:.3}
-.frame.ghost{position:fixed;z-index:60;margin:0;pointer-events:none;animation:none !important;transition:none;transform:scale(1.12) rotate(-2deg);opacity:.97;box-shadow:0 28px 38px -8px rgba(0,0,0,.9),0 0 0 1px #2e1306,inset 0 0 0 1px rgba(255,245,180,.85),inset 0 0 0 2px rgba(110,72,8,.9)}
+.frame.ghost{position:fixed;z-index:60;margin:0;pointer-events:none;animation:none !important;transition:none;transform:scale(1.12);opacity:.97;will-change:transform,left,top;box-shadow:0 28px 38px -8px rgba(0,0,0,.9),0 0 0 1px #2e1306,inset 0 0 0 1px rgba(255,245,180,.85),inset 0 0 0 2px rgba(110,72,8,.9)}
 
 /* 右側輸入面板 */
 #panel{flex:none;width:clamp(300px,19vw,360px);margin:20px 20px 20px 0;padding:24px 22px 20px;overflow-y:auto;background:var(--panel);border:1px solid rgba(255,191,31,.45);border-radius:6px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
@@ -385,7 +382,19 @@ function startDrag(p){
  el.classList.add('ph');wall.classList.add('dragging');
  suppressClick=true;
  if(navigator.vibrate)try{navigator.vibrate(18)}catch(e){}
- requestAnimationFrame(autoScroll)}
+ drag.amp=0;drag.ph=0;drag.sv=0;drag.lx=p.x;drag.ly=p.y;
+ requestAnimationFrame(autoScroll);requestAnimationFrame(swing)}
+/* 被拖曳的相框：移動時左右來回輕晃，停住後幅度慢慢縮小到靜止 */
+function swing(){
+ if(!drag)return;
+ const d=drag,sp=Math.hypot(d.x-d.lx,d.y-d.ly);d.lx=d.x;d.ly=d.y;
+ d.sv+=(sp-d.sv)*.2;
+ const target=Math.min(5,d.sv*.35);
+ d.amp+=(target-d.amp)*.1;
+ d.ph+=.2;
+ if(d.amp<.03)d.amp=0;
+ d.ghost.style.transform='scale(1.12) rotate('+(d.amp*Math.sin(d.ph)).toFixed(2)+'deg)';
+ requestAnimationFrame(swing)}
 function hitTest(x,y){
  const el=drag.el,kids=[...wall.children];
  const t=kids.find(k=>{if(k===el||k._busy)return false;const r=k.getBoundingClientRect();return x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom});
