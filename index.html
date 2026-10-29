@@ -32,7 +32,7 @@ h1 .logo{display:block;height:clamp(48px,4.4vw,84px);width:auto;filter:drop-shad
 h1 .sub{line-height:1;padding-bottom:6px;font-size:clamp(20px,1.8vw,34px);letter-spacing:.4em;color:var(--gold);font-weight:500;white-space:nowrap}
 #scroller{flex:1;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#444 transparent;padding:26px 30px 48px;position:relative}
 #empty{text-align:center;color:#8d9488;font-size:clamp(15px,1.3vw,20px);letter-spacing:.15em;padding:12vh 16px 0;pointer-events:none}
-#wall{display:grid;grid-template-columns:repeat(auto-fill,140px);justify-content:space-between;column-gap:10px;row-gap:34px;grid-auto-rows:160px;max-width:1490px;margin:0 auto}
+#wall{display:grid;grid-template-columns:repeat(auto-fill,140px);justify-content:center;column-gap:22px;row-gap:34px;grid-auto-rows:160px;max-width:1598px;margin:0 auto}
 
 .frame{position:relative;width:140px;height:160px;padding:6px;border:3px solid transparent;cursor:pointer;
  background:linear-gradient(135deg,#fff3b8 0%,#e8bb3c 16%,#a2700f 36%,#f8d868 54%,#b5821a 74%,#ffe58c 100%) padding-box,linear-gradient(135deg,#b36a40 0%,#6e3317 40%,#5a2a12 60%,#93502d 100%) border-box;border-radius:3px;
@@ -48,10 +48,10 @@ h1 .sub{line-height:1;padding-bottom:6px;font-size:clamp(20px,1.8vw,34px);letter
  box-shadow:0 7px 9px -3px rgba(0,0,0,.85),0 0 0 1px #2e1306,inset 0 1px 0 rgba(255,200,150,.55),inset 0 -1px 0 rgba(0,0,0,.5),inset 1px 0 0 rgba(255,190,140,.3)}
 .frame .nm span{display:block;height:100%;line-height:20px;padding:0 11px;text-align:center;font-size:14px;font-weight:700;letter-spacing:.05em;color:#3a2403;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
  background:
-  radial-gradient(circle,#fff0b0 0 .8px,#b88a22 1.4px,#6a4608 2.6px,transparent 3px) left 2px top 2px/7px 7px no-repeat,
-  radial-gradient(circle,#fff0b0 0 .8px,#b88a22 1.4px,#6a4608 2.6px,transparent 3px) right 2px top 2px/7px 7px no-repeat,
-  radial-gradient(circle,#fff0b0 0 .8px,#b88a22 1.4px,#6a4608 2.6px,transparent 3px) left 2px bottom 2px/7px 7px no-repeat,
-  radial-gradient(circle,#fff0b0 0 .8px,#b88a22 1.4px,#6a4608 2.6px,transparent 3px) right 2px bottom 2px/7px 7px no-repeat,
+  radial-gradient(circle,#fff0b0 0 .65px,#b88a22 1.15px,#6a4608 2.1px,transparent 2.4px) left 2px top 2px/6px 6px no-repeat,
+  radial-gradient(circle,#fff0b0 0 .65px,#b88a22 1.15px,#6a4608 2.1px,transparent 2.4px) right 2px top 2px/6px 6px no-repeat,
+  radial-gradient(circle,#fff0b0 0 .65px,#b88a22 1.15px,#6a4608 2.1px,transparent 2.4px) left 2px bottom 2px/6px 6px no-repeat,
+  radial-gradient(circle,#fff0b0 0 .65px,#b88a22 1.15px,#6a4608 2.1px,transparent 2.4px) right 2px bottom 2px/6px 6px no-repeat,
   linear-gradient(105deg,#e6bd4c 0%,#fbe99f 28%,#d8a62c 50%,#f9e18c 74%,#e2b63c 100%);
  box-shadow:inset 0 0 0 1px rgba(255,249,205,.95),inset 0 0 0 2px rgba(150,100,15,.45);text-shadow:0 1px 0 rgba(255,246,195,.9)}
 @keyframes hang{0%{opacity:0;transform:translateY(-40px) rotate(-6deg)}60%{opacity:1;transform:rotate(2deg)}100%{transform:none}}
@@ -90,6 +90,21 @@ textarea{resize:none;height:170px;line-height:1.6}
 #card p{margin:0 0 22px;line-height:1.8;font-size:clamp(17px,1.6vw,22px);white-space:pre-wrap;word-break:break-word;max-height:300px;overflow:auto}
 #card .btn{font-size:18px;padding:10px 20px}
 #card .acts{display:flex;flex-wrap:wrap;gap:10px}
+#cm{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,191,31,.3)}
+#cm h4{margin:0 0 10px;font-size:16px;color:var(--gold);font-weight:500;letter-spacing:.1em}
+#clist{max-height:190px;overflow-y:auto;margin-bottom:12px;display:flex;flex-direction:column;gap:8px;scrollbar-width:thin;scrollbar-color:#444 transparent}
+.cmt{background:rgba(255,255,255,.06);border-radius:4px;padding:8px 10px}
+.cmt .h{font-size:13px;color:#8d9488;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.cmt .h b{color:var(--gold);font-weight:500;font-size:14px}
+.cmt .t{margin-top:4px;font-size:16px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.cmt .d{background:none;border:0;color:#8d9488;cursor:pointer;font:inherit;font-size:13px;padding:0 2px;flex:none}
+.cmt .d:hover{color:#ddd}
+.cmt .d.sure{color:#ff6b5a}
+.cnone{color:#6f776a;font-size:14px}
+.cform{display:flex;flex-direction:column;gap:8px}
+#cname{font-size:15px;padding:8px 10px}
+#ctext{height:64px;font-size:16px}
+#csend{align-self:flex-end;font-size:15px}
 #mnote{margin-top:14px;color:#8d9488;font-size:14px}
 #mnote:not([hidden]){display:block}
 #card #ename{font-size:24px;margin-bottom:12px}
@@ -130,7 +145,7 @@ textarea{resize:none;height:170px;line-height:1.6}
  <form id="panel" onsubmit="return false">
   <div class="ph"><h2>登錄名人</h2><button type="button" class="x" id="pclose" aria-label="關閉">×</button></div>
   <div class="row">
-   <div id="prev">點擊上傳<br>頭像（選填）</div>
+   <div id="prev">點擊上傳照片<br>（選填）</div>
    <div style="flex:1"><button type="button" class="btn" id="pick">選擇圖片</button><br><small id="fname" style="display:block;margin-top:8px;word-break:break-all"></small></div>
    <input type="file" id="file" accept="image/*" hidden>
   </div>
@@ -147,8 +162,16 @@ textarea{resize:none;height:170px;line-height:1.6}
  <div class="big"><img id="mimg" alt=""></div>
  <div class="info"><h3 id="mname"></h3><p id="mdeeds"></p>
   <input type="text" id="ename" maxlength="20" hidden><textarea id="edeeds" maxlength="200" hidden></textarea><input type="file" id="efile" accept="image/*" hidden>
-  <div class="acts"><button class="btn" id="medit">編輯</button><button class="btn" id="mpic" hidden>更換頭像</button><button class="btn" id="msave" hidden>儲存</button><button class="btn" id="mcancel" hidden>取消</button><button class="btn" id="mclose">關閉</button><button class="btn" id="mdel">刪除</button></div>
-  <small id="mnote" hidden>只有登錄這位名人的人可以編輯或刪除。</small></div>
+  <div class="acts"><button class="btn" id="medit">編輯</button><button class="btn" id="mpic" hidden>更換照片</button><button class="btn" id="mpicdel" hidden>刪除照片</button><button class="btn" id="msave" hidden>儲存</button><button class="btn" id="mcancel" hidden>取消</button><button class="btn" id="mdel">刪除</button><button class="btn" id="mclose">關閉</button></div>
+  <div id="cm">
+   <h4 id="chead">留言</h4>
+   <div id="clist"></div>
+   <div class="cform">
+    <input type="text" id="cname" maxlength="12" placeholder="暱稱（選填）">
+    <textarea id="ctext" maxlength="100" placeholder="寫下你的留言…（最多 100 字）"></textarea>
+    <button type="button" class="btn" id="csend">送出留言</button>
+   </div>
+  </div></div>
 </div></div>
 
 <script>
@@ -176,7 +199,7 @@ let members=[],membersRef=null,uid=null,online=true,known=null,lastMine=null;
 let tT=null;function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('on'),2800)}
 function loadScript(src){return new Promise((ok,bad)=>{const s=document.createElement('script');s.src=src;s.onload=ok;s.onerror=()=>bad(new Error('無法載入 '+src));document.head.appendChild(s)})}
 function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify(members))}catch(e){toast('瀏覽器儲存空間不足，資料可能無法保留。')}}
-const canEdit=m=>!FB_ON||m.owner===uid;
+const canEdit=()=>true;
 
 // 預設頭像（剪影）
 const DEF='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 160"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4c08a"/><stop offset="1" stop-color="#c4703a"/></linearGradient></defs><rect width="140" height="160" fill="url(#g)"/><circle cx="70" cy="62" r="26" fill="#7a4a2a" opacity=".75"/><path d="M18 160c0-38 22-56 52-56s52 18 52 56z" fill="#7a4a2a" opacity=".75"/></svg>');
@@ -219,12 +242,12 @@ function addMember(name,deeds,img){
 function updateMember(m,fields){
  Object.assign(m,fields);
  if(FB_ON){
-  const f={name:fields.name,deeds:fields.deeds};if(fields.img)f.img=fields.img;
+  const f={name:fields.name,deeds:fields.deeds};if('img' in fields)f.img=fields.img;
   membersRef.child(m.id).update(f).catch(e=>toast('儲存失敗：'+(e.code||e.message)));
  }else{saveLocal();render()}}
 function removeMember(m){
- if(FB_ON){membersRef.child(m.id).remove().catch(e=>toast('刪除失敗：'+(e.code||e.message)))}
- else{members=members.filter(x=>x.id!==m.id);saveLocal();render()}}
+ if(FB_ON){firebase.database().ref().update({['members/'+m.id]:null,['comments/'+m.id]:null}).catch(e=>toast('刪除失敗：'+(e.code||e.message)))}
+ else{members=members.filter(x=>x.id!==m.id);saveLocal();const c=loadCmts();delete c[m.id];saveCmts(c);render()}}
 
 async function init(){
  if(!FB_ON){
@@ -282,7 +305,7 @@ $('submit').onclick=()=>{
  if(!d){toast('請輸入事蹟');return}
  if(!addMember(name,d,avatar))return;
  $('name').value='';deeds.value='';deeds.oninput();
- avatar='';file.value='';prev.style.backgroundImage='';prev.innerHTML='點擊上傳<br>頭像（選填）';
+ avatar='';file.value='';prev.style.backgroundImage='';prev.innerHTML='點擊上傳照片<br>（選填）';
  $('fname').textContent='';
  panel.classList.remove('open');
 };
@@ -290,38 +313,101 @@ $('submit').onclick=()=>{
 /* ---------- 說明框：檢視／編輯／刪除 ---------- */
 const modal=$('modal');let cur=null;
 function openCard(m){cur=m;resetDel();setEdit(false);$('mimg').src=m.img||DEF;
- $('mname').textContent=m.name;$('mdeeds').textContent=m.deeds;modal.classList.add('on')}
-$('mclose').onclick=()=>modal.classList.remove('on');
-modal.onclick=e=>{if(e.target===modal)modal.classList.remove('on')};
+ $('mname').textContent=m.name;$('mdeeds').textContent=m.deeds;modal.classList.add('on');watchComments(m)}
+function closeCard(){modal.classList.remove('on');unwatchComments()}
+$('mclose').onclick=closeCard;
+modal.onclick=e=>{if(e.target===modal)closeCard()};
 let delT=null;const mdel=$('mdel');
 function resetDel(){clearTimeout(delT);mdel.textContent='刪除';mdel.style.cssText=''}
 mdel.onclick=()=>{
  if(!cur||!canEdit(cur))return;
  if(mdel.textContent==='刪除'){mdel.textContent='再按一次確認刪除';mdel.style.cssText='background:#c0392b;border-color:#c0392b;color:#fff';delT=setTimeout(resetDel,3500);return}
- resetDel();removeMember(cur);modal.classList.remove('on')};
+ resetDel();removeMember(cur);closeCard()};
 
-let newImg=null;
+let newImg=null,removeImg=false,editing=false;
+function refreshPicBtn(){$('mpicdel').hidden=!(editing&&(newImg||(cur&&cur.img&&!removeImg)))}
 function setEdit(on){
+ editing=on;$('cm').hidden=on;
  const ce=cur?canEdit(cur):true;
  $('mname').hidden=$('mdeeds').hidden=on;
  $('mclose').hidden=on;
  $('medit').hidden=on||!ce;$('mdel').hidden=on||!ce;
  ['ename','edeeds','msave','mcancel','mpic'].forEach(i=>$(i).hidden=!on);
- $('mnote').hidden=on||ce;
  if(on&&cur){$('ename').value=cur.name;$('edeeds').value=cur.deeds}
- newImg=null}
+ newImg=null;removeImg=false;refreshPicBtn()}
 $('medit').onclick=()=>setEdit(true);
 $('mpic').onclick=()=>$('efile').click();
 $('efile').onchange=()=>{
  const f=$('efile').files[0];if(!f)return;
- toAvatar(f,u=>{newImg=u;$('mimg').src=u});$('efile').value=''};
+ toAvatar(f,u=>{newImg=u;removeImg=false;$('mimg').src=u;refreshPicBtn()});$('efile').value=''};
+$('mpicdel').onclick=()=>{removeImg=true;newImg=null;$('mimg').src=DEF;refreshPicBtn()};
 $('mcancel').onclick=()=>{$('mimg').src=cur.img||DEF;setEdit(false)};
 $('msave').onclick=()=>{
  const nm=$('ename').value.trim(),d=$('edeeds').value.trim();
  if(!nm){toast('請輸入名字');return}
  if(!d){toast('請輸入事蹟');return}
- const fields={name:nm,deeds:d};if(newImg)fields.img=newImg;
+ const fields={name:nm,deeds:d};if(newImg)fields.img=newImg;else if(removeImg)fields.img=null;
  updateMember(cur,fields);openCard(cur)};
+
+/* ---------- 留言：任何人可新增與刪除，不能修改 ---------- */
+const CKEY='hof-comments-v1',NKEY='hof-nick';
+function loadCmts(){try{return JSON.parse(localStorage.getItem(CKEY)||'{}')}catch(e){return {}}}
+function saveCmts(c){try{localStorage.setItem(CKEY,JSON.stringify(c))}catch(e){toast('瀏覽器儲存空間不足')}}
+let cQuery=null,cCb=null,cMid=null,cList=[];
+function unwatchComments(){if(cQuery&&cCb)cQuery.off('value',cCb);cQuery=cCb=null;cMid=null}
+function watchComments(m){
+ unwatchComments();cMid=m.id;
+ try{$('cname').value=localStorage.getItem(NKEY)||''}catch(e){}
+ $('ctext').value='';
+ if(FB_ON&&membersRef){
+  cQuery=firebase.database().ref('comments/'+m.id).orderByChild('ts');
+  cCb=cQuery.on('value',snap=>{const a=[];snap.forEach(ch=>{a.push(Object.assign({id:ch.key},ch.val()))});drawComments(a)},
+   err=>toast('留言讀取失敗：'+(err.code||err.message)));
+ }else{
+  drawComments(loadCmts()[m.id]||[]);
+ }
+}
+function fmtTime(ts){try{return new Date(ts).toLocaleString('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false})}catch(e){return ''}}
+function drawComments(list){
+ cList=list;
+ const box=$('clist');box.innerHTML='';
+ $('chead').textContent='留言（'+list.length+'）';
+ if(!list.length){const d=document.createElement('div');d.className='cnone';d.textContent='還沒有留言，來當第一個吧。';box.append(d);return}
+ list.forEach(c=>{
+  const w=document.createElement('div');w.className='cmt';
+  const h=document.createElement('div');h.className='h';
+  const l=document.createElement('span');const b=document.createElement('b');b.textContent=c.name||'訪客';
+  l.append(b,' ・ '+fmtTime(c.ts));
+  const del=document.createElement('button');del.type='button';del.className='d';del.textContent='刪除';
+  let t=null;
+  del.onclick=()=>{
+   if(!del.classList.contains('sure')){del.classList.add('sure');del.textContent='確定刪除？';t=setTimeout(()=>{del.classList.remove('sure');del.textContent='刪除'},3000);return}
+   clearTimeout(t);removeComment(c)};
+  h.append(l,del);
+  const tx=document.createElement('div');tx.className='t';tx.textContent=c.text;
+  w.append(h,tx);box.append(w)});
+ box.scrollTop=box.scrollHeight;
+}
+function removeComment(c){
+ if(!cMid)return;
+ if(FB_ON){firebase.database().ref('comments/'+cMid+'/'+c.id).remove().catch(e=>toast('刪除留言失敗：'+(e.code||e.message)))}
+ else{const all=loadCmts();all[cMid]=(all[cMid]||[]).filter(x=>x.id!==c.id);saveCmts(all);drawComments(all[cMid])}
+}
+$('csend').onclick=()=>{
+ if(!cMid)return;
+ const text=$('ctext').value.trim(),name=$('cname').value.trim();
+ if(!text){toast('請輸入留言內容');return}
+ try{localStorage.setItem(NKEY,name)}catch(e){}
+ const rec={text,ts:Date.now()};if(name)rec.name=name;
+ if(FB_ON){
+  if(!membersRef){toast('尚未連線，請稍後再試');return}
+  firebase.database().ref('comments/'+cMid).push(rec).catch(e=>toast('留言失敗：'+(e.code||e.message)));
+ }else{
+  const all=loadCmts();rec.id=rec.ts+''+Math.floor(Math.random()*1000);
+  (all[cMid]=all[cMid]||[]).push(rec);saveCmts(all);drawComments(all[cMid]);
+ }
+ $('ctext').value='';
+};
 
 init();
 </script>
